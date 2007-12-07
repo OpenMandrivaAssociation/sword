@@ -1,14 +1,16 @@
 %define lib_name_orig libsword
 %define lib_major     4
 %define lib_name      %mklibname %name %version
+%define develname %mklibname -d %name
+%define staticname %mklibname -d -s %name
 
 Summary:        The SWORD Project framework for manipulating Bible texts
 Summary(cs):    Programy pro studium Bible a vývojové nástroje
 Summary(sk):    Programy pre ¹túdium Biblie a vývojové nástroje
 Name:           sword
-Version:        1.5.9
+Version:        1.5.10
 Release:        %mkrel 1
-License:        GPL
+License:        GPLv2+
 URL:            http://www.crosswire.org/sword/software/
 Source:         http://www.crosswire.org/ftpmirror/pub/sword/source/v1.5/%{name}-%{version}.tar.gz
 Source1:        ftp://ftp.zedz.net/pub/crypto/crypto/LIBS/sapphire/sapphire.zip 
@@ -50,25 +52,26 @@ Group:           System/Libraries
 This package contains the library needed to run programs dynamically
 linked with sword.
 
-%package -n %{lib_name}-devel
+%package -n %{develname}
 Summary:         Include files for developing sword applications
 Group:           System/Libraries
 Requires:        %{lib_name} = %{version}
-Provides:        %{lib_name_orig}-devel = %{version}-%{release} %{name}-devel = %{version}-%{release} 
-Provides:        %{_lib}%{name}-devel
+Provides:        %{name}-devel = %{version}-%{release} 
+Obsoletes:       %mklibname -d %name 1.5.9
 
-%description -n %{lib_name}-devel
+%description -n %{develname}
 This package contains the headers that programmers 
 will need to develop applications which will use the SWORD Bible Framework.
 
-%package -n %{lib_name}-static-devel
+%package -n %{staticname}
 Summary:         Static libs for developing sword applications
 Group:           System/Libraries
-Requires:        %{lib_name} = %{version} %{lib_name}-devel = %{version}
-Provides:        %{lib_name_orig}-static-devel = %{version}-%{release} %{name}-static-devel = %{version}-%{release} 
-Provides:        %{_lib}%{name}-static-devel
+Requires:        %{lib_name} = %{version}
+Requires:	 %{develname} = %{version}
+Provides:        %{name}-static-devel = %{version}-%{release} 
+Obsoletes:       %mklibname -d -s %name 1.5.9
 
-%description -n %{lib_name}-static-devel
+%description -n %{staticname}
 This package contains the static libraries that programmers 
 will need to develop applications which will use the SWORD Bible Framework.
 
@@ -108,18 +111,14 @@ will need to develop applications which will use the SWORD Bible Framework.
 %defattr(-,root,root)
 %{_libdir}/*%{name}-*.so
 
-%files -n %{lib_name}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %attr(0755,root,root) %dir %{_includedir}/sword
 %{_includedir}/sword/*.*
 %{_libdir}/*%{name}.so
 %{_libdir}/*.la
 %{_libdir}/pkgconfig/*.pc
-#removed from main. May add it back later.
-#%doc doc/api-documentation
 
-%files -n %{lib_name}-static-devel
+%files -n %{staticname}
 %defattr(-,root,root)
 %{_libdir}/*.a
-
-

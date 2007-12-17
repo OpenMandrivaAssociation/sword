@@ -18,7 +18,6 @@ Source2:        sword_icons.tar.bz2
 Group:          System/Libraries
 BuildRequires:  zlib-devel
 BuildRequires:  curl-devel >= 7.10.5
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:       %{lib_name} = %{version}
 Requires:       curl >= 7.10.5
 

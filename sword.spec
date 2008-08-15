@@ -8,8 +8,8 @@ Summary:        The SWORD Project framework for manipulating Bible texts
 Summary(cs):    Programy pro studium Bible a vývojové nástroje
 Summary(sk):    Programy pre ¹túdium Biblie a vývojové nástroje
 Name:           sword
-Version:        1.5.10
-Release:        %mkrel 4
+Version:        1.5.11
+Release:        %mkrel 1
 License:        GPLv2+
 URL:            http://www.crosswire.org/sword/software/
 Source:         http://www.crosswire.org/ftpmirror/pub/sword/source/v1.5/%{name}-%{version}.tar.gz

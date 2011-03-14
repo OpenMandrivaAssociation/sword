@@ -9,7 +9,7 @@ Summary(cs):    Programy pro studium Bible a vývojové nástroje
 Summary(sk):    Programy pre ¹túdium Biblie a vývojové nástroje
 Name:           sword
 Version:        1.6.2
-Release:        %mkrel 1
+Release:        %mkrel 2
 License:        GPLv2+
 URL:            http://www.crosswire.org/sword/software/
 Source:         http://www.crosswire.org/ftpmirror/pub/sword/source/v1.6/%{name}-%{version}.tar.gz

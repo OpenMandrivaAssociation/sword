@@ -5,8 +5,6 @@
 %define staticname %mklibname -d -s %name
 
 Summary:        The SWORD Project framework for manipulating Bible texts
-Summary(cs):    Programy pro studium Bible a vývojové nástroje
-Summary(sk):    Programy pre ¹túdium Biblie a vývojové nástroje
 Name:           sword
 Version:        1.6.2
 Release:        %mkrel 2
@@ -30,19 +28,6 @@ for research and study of God and His Word.  The SWORD Framework
 allows easy manipulation of Bible texts, commentaries, lexicons, dictionaries, 
 etc.  Many frontends are build using this framework.  An installed module 
 set may be shared between any frontend using the framework.
-
-%description -l cs
-Snahou projektu SWORD je vytvoøit volné (ve smyslu licence OpenSource)
-programy, vývojové nástroje a pomùcky ke studiu Bible.
-Mohou být instalovány dal¹í, volitelnì pøídavné moduly: rùzné pøeklady Bible,
-komentáøe, výklady a slovníky.
-
-%description -l sk
-Cieµom projektu SWORD je vytvori» voµné (vo zmysle licencie OpenSource)
-programy, vývojoví nástroje a pomôcky pre ¹túdium Biblie.. Mô¾u sa tie¾
-nain¹talova» ïal¹ie voliteµné a prídavné moduly: rôzne preklady Biblie,
-Biblické komentáre, lexikóny a slovníky.
-
 
 #main package (contains *.so.[major].* only)
 %package -n %{lib_name}

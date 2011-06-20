@@ -7,7 +7,7 @@
 Summary:        The SWORD Project framework for manipulating Bible texts
 Name:           sword
 Version:        1.6.2
-Release:        %mkrel 3
+Release:        %mkrel 4
 License:        GPLv2+
 URL:            http://www.crosswire.org/sword/software/
 Source:         http://www.crosswire.org/ftpmirror/pub/sword/source/v1.6/%{name}-%{version}.tar.gz
@@ -77,6 +77,10 @@ will need to develop applications which will use the SWORD Bible Framework.
 %{makeinstall_std}
 
 %{__install} -m 0755 utilities/{mkfastmod,mod2vpl,vpl2mod} %{buildroot}%{_bindir}
+
+%if "%{_lib}" == "lib64"
+perl -pi -e "s|-L/usr/lib\b|-L%{_libdir}|g" %{buildroot}%{_libdir}/*.la
+%endif
 
 %clean
 %{__rm} -rf %{buildroot}

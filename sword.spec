@@ -56,7 +56,8 @@ cp -a sapphire/SAPPHIRE.H include/sapphire.h
 cp -a sapphire/SAPPHIRE.CPP src/modules/common/sapphire.cpp
 
 %build
-./autogen.sh
+#./autogen.sh
+autoreconf -fi
 export CXXFLAGS="%{optflags} -DU_USING_ICU_NAMESPACE=1"
 
 #export CC=gcc

@@ -59,8 +59,8 @@ cp -a sapphire/SAPPHIRE.CPP src/modules/common/sapphire.cpp
 NOCONFIGURE=1 ./autogen.sh
 export CXXFLAGS="%{optflags} -DU_USING_ICU_NAMESPACE=1"
 
-export CC=gcc
-export CXX=g++
+#export CC=gcc
+#export CXX=g++
 %configure2_5x \
 	--disable-dependency-tracking \
 	--enable-utilities \

@@ -56,8 +56,12 @@ cp -a sapphire/SAPPHIRE.H include/sapphire.h
 cp -a sapphire/SAPPHIRE.CPP src/modules/common/sapphire.cpp
 
 %build
-export CC=gcc
-export CXX=g++
+#./autogen.sh
+autoreconf -fi
+export CXXFLAGS="%{optflags} -DU_USING_ICU_NAMESPACE=1"
+
+#export CC=gcc
+#export CXX=g++
 %configure2_5x \
 	--disable-dependency-tracking \
 	--enable-utilities \

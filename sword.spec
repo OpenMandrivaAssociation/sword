@@ -49,7 +49,7 @@ applications which will use the SWORD Bible Framework.
 
 %prep
 %setup -q -a2
-%apply_patches
+%autopatch -p1
 
 unzip -d sapphire %{SOURCE1}
 cp -a sapphire/SAPPHIRE.H include/sapphire.h

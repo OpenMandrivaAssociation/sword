@@ -5,12 +5,12 @@
 
 Summary:	The SWORD Project framework for manipulating Bible texts
 Name:		sword
-Version:	1.8.1
+Version:	1.9.0
 Release:	1
 License:	GPLv2+
 Group:		System/Libraries
 URL:		http://www.crosswire.org/sword/software/
-Source0:	http://www.crosswire.org/ftpmirror/pub/sword/source/v1.8/%{name}-%{version}.tar.gz
+Source0:	http://www.crosswire.org/ftpmirror/pub/sword/source/v1.9/%{name}-%{version}.tar.gz
 Source1:	ftp://ftp.zedz.net/pub/crypto/crypto/LIBS/sapphire/sapphire.zip
 Source2:	sword_icons.tar.bz2
 BuildRequires:	pkgconfig(zlib)
@@ -62,17 +62,17 @@ export CXXFLAGS="%{optflags} -DU_USING_ICU_NAMESPACE=1"
 
 #export CC=gcc
 #export CXX=g++
-%configure2_5x \
+%configure \
 	--disable-dependency-tracking \
 	--enable-utilities \
 	--with-curl \
 	--disable-debug \
 	--enable-shared \
 	--with-conf
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 install -m 0755 utilities/{mkfastmod,mod2vpl,vpl2mod} %{buildroot}%{_bindir}
 

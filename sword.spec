@@ -51,9 +51,9 @@ applications which will use the SWORD Bible Framework.
 %setup -q -a2
 %autopatch -p1
 
-unzip -d sapphire %{SOURCE1}
-cp -a sapphire/SAPPHIRE.H include/sapphire.h
-cp -a sapphire/SAPPHIRE.CPP src/modules/common/sapphire.cpp
+#unzip -d sapphire %{SOURCE1}
+#cp -a sapphire/SAPPHIRE.H include/sapphire.h
+#cp -a sapphire/SAPPHIRE.CPP src/modules/common/sapphire.cpp
 
 %build
 #./autogen.sh

@@ -6,13 +6,12 @@
 Summary:	The SWORD Project framework for manipulating Bible texts
 Name:		sword
 Version:	1.9.0
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		System/Libraries
 URL:		http://www.crosswire.org/sword/software/
 Source0:	http://www.crosswire.org/ftpmirror/pub/sword/source/v1.9/%{name}-%{version}.tar.gz
-Source1:	ftp://ftp.zedz.net/pub/crypto/crypto/LIBS/sapphire/sapphire.zip
-Source2:	sword_icons.tar.bz2
+Source1:	sword_icons.tar.bz2
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	icu-devel
@@ -48,20 +47,11 @@ This package contains the headers that programmers will need to develop
 applications which will use the SWORD Bible Framework.
 
 %prep
-%setup -q -a2
-%autopatch -p1
-
-#unzip -d sapphire %{SOURCE1}
-#cp -a sapphire/SAPPHIRE.H include/sapphire.h
-#cp -a sapphire/SAPPHIRE.CPP src/modules/common/sapphire.cpp
-
-%build
-#./autogen.sh
+%autosetup -p1 -a1
 autoreconf -fi
+
 export CXXFLAGS="%{optflags} -DU_USING_ICU_NAMESPACE=1"
 
-#export CC=gcc
-#export CXX=g++
 %configure \
 	--disable-dependency-tracking \
 	--enable-utilities \
@@ -69,6 +59,8 @@ export CXXFLAGS="%{optflags} -DU_USING_ICU_NAMESPACE=1"
 	--disable-debug \
 	--enable-shared \
 	--with-conf
+
+%build
 %make_build
 
 %install

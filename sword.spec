@@ -6,7 +6,7 @@
 Summary:	The SWORD Project framework for manipulating Bible texts
 Name:		sword
 Version:	1.9.0
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		System/Libraries
 URL:		http://www.crosswire.org/sword/software/

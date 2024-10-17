@@ -9,7 +9,7 @@ Version:	1.9.0
 Release:	4
 License:	GPLv2+
 Group:		System/Libraries
-URL:		http://www.crosswire.org/sword/software/
+URL:		https://www.crosswire.org/sword/software/
 Source0:	http://www.crosswire.org/ftpmirror/pub/sword/source/v1.9/%{name}-%{version}.tar.gz
 Source1:	sword_icons.tar.bz2
 BuildRequires:	pkgconfig(zlib)
